@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Mở tất cả sản phẩm</title>
+  <script>
+    window.onload = function () {
+      const urls = new URLSearchParams(window.location.search).get("urls");
+      if (urls) {
+        const list = urls.split(",").map(decodeURIComponent);
+        list.forEach((url) => {
+          window.open(url, "_blank");
+        });
+      }
+    };
+  </script>
+</head>
+<body>
+  <h2>Đang mở các sản phẩm bạn đã chọn...</h2>
+</body>
+</html>
