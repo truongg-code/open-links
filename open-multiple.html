@@ -3,8 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Mở tất cả sản phẩm</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Nhấn vào nút bên dưới để mở tất cả sản phẩm bạn đã chọn</h2>
+  <p>Nếu trình duyệt chặn pop-up, hãy cấp quyền cho trang này.</p>
+  <button class="btn" onclick="openAllTabs()">Mở tất cả sản phẩm</button>
+
   <script>
-    window.onload = function () {
+    function openAllTabs() {
       const urls = new URLSearchParams(window.location.search).get("urls");
       if (urls) {
         const list = urls.split(",").map(decodeURIComponent);
@@ -12,10 +34,7 @@
           window.open(url, "_blank");
         });
       }
-    };
+    }
   </script>
-</head>
-<body>
-  <h2>Đang mở các sản phẩm bạn đã chọn...</h2>
 </body>
 </html>
