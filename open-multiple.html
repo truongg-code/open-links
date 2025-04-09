@@ -34,6 +34,11 @@
           window.open(url, "_blank");
         });
       }
+
+      // Delay 1s rồi đóng tab trung gian
+      setTimeout(() => {
+        window.close();
+      }, 1000);
     }
   </script>
 </body>
